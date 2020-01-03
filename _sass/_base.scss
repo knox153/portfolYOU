@@ -1,5 +1,16 @@
+:root {
+    color-scheme: light dark;
+    --duration: 0.5s;
+    --timing: ease;  
+}
+
 body {
     font-family: 'Poppins', sans-serif;
+    background: var(--background-color);
+    color: var(--color);
+    transition:
+        color var(--duration) var(--timing),
+        background-color var(--duration) var(--timing);  
 }
 
 .badge {

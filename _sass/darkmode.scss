@@ -1,0 +1,31 @@
+@mixin dark-style {
+	--light-text-color: rgb(199, 199, 204);
+	--link-color: rgb( 100, 210, 255);
+	--background-color: rgb(28, 28, 30);
+	--color: rgb(229, 229, 234);
+}
+
+@mixin light-style {
+	--light-text-color: rgb(72, 72, 74);
+	--link-color: rgb(0, 112, 201);
+	--background-color: rgb(255, 255, 255);
+	--color: rgb(51, 51, 51);
+}
+
+html, html[data-theme="light"] { 
+	@include light-style();
+}
+
+html[data-theme="dark"] {
+	@include dark-style();
+}
+
+@media (prefers-color-scheme: dark) {
+	html, html[data-theme="dark"] {
+		@include dark-style();
+	}
+	
+	html[data-theme="light"] { 
+		@include light-style();
+	}
+}
